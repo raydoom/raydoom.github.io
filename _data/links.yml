@@ -1,0 +1,11 @@
+- name: Home
+  url: /
+
+- name: Tags 
+  url: /tags
+
+- name: Github  
+  url: https://github.com/seanhuai/Jekyll-theme-Manami
+
+- name: About
+  url: /about

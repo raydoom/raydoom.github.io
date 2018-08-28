@@ -1,6 +1,21 @@
 ---
-layout: layout
+layout: default
 ---
 
-{% assign __ = site.data.languages[site.language] %}
-{% include post.html %}
+<main>
+  <article>
+  {{ content }}
+  </article>
+  <post-meta>
+    <div>本文由 {% if page.author %}{{page.author}}{% else %}{{site.author}}{% endif %} 发表于 {{page.date | date:"%F"}}<span>，转载请注明来源，禁止商业使用。</span></div>
+    <div class="postlist-tags">
+      本文内容标签：
+      {% for tag in page.tags %}
+        <a href="/tags/#{{tag}}">{{ tag }}</a>
+      {% endfor %}
+    </div>
+  </post-meta>
+  {% if site.disqus and page.comments %}
+    {% include comments.html %}
+  {% endif %}
+</main>

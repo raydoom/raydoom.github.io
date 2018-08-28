@@ -1,0 +1,219 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+@font-face {
+  font-family: 'Consolas';
+  src: url("https://cdn.ruye.org.cn/blog/fonts/consola.ttf"); }
+body {
+  font-family: PingFang, Lantinghei, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans;
+  font-weight: 300; }
+  body a {
+    padding: 0 7px;
+    text-decoration: none;
+    color: #51A8DD;
+    line-height: 100%; }
+    body a:hover {
+      transition: all 0.5s;
+      color: #fff;
+      background-color: #51A8DD; }
+
+blog-name, blog-desc, blog-navbar, blog-postlist, .postlist-warp, .postlist-excerpt, post-meta {
+  display: block; }
+
+.postlist-time, .postlist-name, .postlist-tags, .inline-list li {
+  display: inline-block; }
+
+header {
+  padding: 60px 0;
+  background-color: #7e7e7e;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  text-align: center;
+  text-shadow: 2px 2px 3px #777; }
+
+blog-name {
+  margin: 50px 0 10px;
+  font-size: 2.25rem; }
+
+blog-desc {
+  text-indent: 1rem;
+  letter-spacing: 1rem; }
+
+blog-navbar {
+  margin: 50px auto 0; }
+  blog-navbar a {
+    margin: 0 10px;
+    color: #fff; }
+    blog-navbar a:hover {
+      transition: all 0.5s;
+      background-color: #51A8DD; }
+
+main {
+  margin: 30px auto;
+  width: 60%; }
+
+blog-postlist {
+  min-width: 8rem; }
+  blog-postlist .postlist-warp {
+    margin: 15px auto 0;
+    padding: 5px 0 20px;
+    border-bottom: 2px solid #eee;
+    height: auto;
+    min-height: 80px; }
+    blog-postlist .postlist-warp:last-child {
+      border: none; }
+    blog-postlist .postlist-warp .postlist-time {
+      color: #777;
+      width: 120px;
+      font-size: 1.2rem;
+      text-align: center; }
+    blog-postlist .postlist-warp .postlist-name {
+      border-left: 3px solid #51A8DD;
+      font-size: 1.5rem; }
+    blog-postlist .postlist-warp .postlist-excerpt {
+      margin-top: 5px;
+      padding: 0 125px;
+      line-height: 1.7rem;
+      text-overflow: ellipsis; }
+      blog-postlist .postlist-warp .postlist-excerpt img, blog-postlist .postlist-warp .postlist-excerpt video {
+        width: 100%; }
+    blog-postlist .postlist-warp .postlist-tags {
+      float: right; }
+      blog-postlist .postlist-warp .postlist-tags a {
+        border: 1px solid #51A8DD;
+        border-radius: 5px; }
+
+article h1, article h2, article h3, article h4, article h5, article h6 {
+  margin: 20px 0;
+  font-weight: normal; }
+article ul, article ol {
+  margin: 10px 0 10px 48px; }
+article li {
+  margin: 10px 0;
+  line-height: 2rem; }
+article blockquote {
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #eee;
+  border-left: 5px solid #51A8DD;
+  font-style: italic; }
+article code {
+  font-family: Consolas;
+  font-size: 0.9rem; }
+article > p {
+  text-indent: 32px; }
+article p {
+  line-height: 2rem;
+  text-align: left; }
+  article p code {
+    padding: 0 0.2rem;
+    background-color: #DB8E71;
+    color: #eee; }
+article pre code {
+  margin: 10px 0;
+  line-height: 1.3rem;
+  border-radius: 5px; }
+article .hljs {
+  padding: 0.8rem; }
+article img {
+  margin-left: -32px;
+  width: 100%;
+  height: 100%; }
+article video {
+  width: 100%; }
+article hr {
+  margin: 10px 0; }
+
+post-meta {
+  margin: 30px auto 10px;
+  padding: 20px 0 0;
+  border-top: 1px solid #51A8DD; }
+  post-meta div {
+    margin: 5px 0; }
+  post-meta a {
+    border: 1px solid #51A8DD;
+    border-radius: 5px; }
+
+@media (max-width: 991px) {
+  main {
+    width: 70%; } }
+@media (max-width: 720px) {
+  header {
+    padding: 20px 0; }
+
+  blog-name {
+    font-size: 1.7rem;
+    margin: 20px 0 5px; }
+
+  blog-desc {
+    text-indent: 0.5rem;
+    letter-spacing: 0.5rem; }
+
+  blog-navbar {
+    margin: 20px auto 0; }
+    blog-navbar a {
+      margin: 0 5px; }
+
+  main {
+    width: 85%;
+    margin: 15px auto; }
+
+  blog-postlist .postlist-warp .postlist-time {
+    width: 90px;
+    font-size: 1rem; }
+  blog-postlist .postlist-warp .postlist-name {
+    font-size: 1.2rem; }
+  blog-postlist .postlist-warp .postlist-excerpt {
+    padding: 5px; }
+  blog-postlist .postlist-warp .postlist-tags {
+    display: none; }
+
+  article h1 {
+    font-size: 1.5rem; }
+  article h2 {
+    font-size: 1.3rem; }
+  article h3 {
+    font-size: 1.2rem; }
+  article h4 {
+    font-size: 1.1rem; }
+  article h5 {
+    font-size: 1rem; }
+  article p {
+    line-height: 1.7rem; }
+  article blockquote > p {
+    font-size: 0.9rem; }
+
+  post-meta span {
+    display: none; } }
+@media (max-width: 500px) {
+  main {
+    width: 90%; } }
+.inline-list {
+  padding: 20px;
+  background-color: #51A8DD;
+  line-height: 1.5rem; }
+  .inline-list a {
+    margin: 0;
+    color: #fff;
+    background-color: #51A8DD; }
+
+.tags-list ul {
+  margin-left: 32px; }
+  .tags-list ul li.entry-title {
+    list-style: none; }
+
+footer {
+  margin-top: 20px;
+  padding: 20px 0;
+  border-top: 1px solid #777;
+  font-size: 0.7rem;
+  text-align: center; }
+  footer a {
+    padding: 0; }
+    footer a:hover {
+      color: #51A8DD;
+      background-color: inherit; }
+
+/*# sourceMappingURL=style.css.map */

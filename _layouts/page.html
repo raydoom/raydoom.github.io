@@ -1,6 +1,13 @@
 ---
-layout: layout
+layout: default
 ---
 
-{% assign __ = site.data.languages[site.language] %}
-{% include page.html %}
+<main>
+  <article>
+  {{ content }}
+  </article>
+  {% if site.disqus and page.comments %}
+  <hr>
+    {% include comments.html %}
+  {% endif %}
+</main>
