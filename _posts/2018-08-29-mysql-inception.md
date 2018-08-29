@@ -87,7 +87,7 @@ Inception使用mysql客户端进行连接
 ```sh
 $ mysql -uroot -hINCEPTION_IP -P6669
 mysql >inception get variables;
-```sh
+```
 
 #### 配置Yearning
 
