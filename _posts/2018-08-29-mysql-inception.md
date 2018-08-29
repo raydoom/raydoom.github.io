@@ -1,17 +1,17 @@
 ---
 title: inception部署配置
-description: 一个集审核、执行、备份及生成回滚语句于一身的MySQL自动化运维工具
+description:一个是集审核、执行、回滚于一体的一个自动化运维工具，它是根据MySQL代码修改过来的，用它可以很明确的，详细的，准确的审核MySQL的SQL语句
 categories:
  - mysql
 tags:
 ---
 
 ## 概述
-> 一个集审核、执行、备份及生成回滚语句于一身的MySQL自动化运维工具
+>一个集审核、执行、回滚于一体的一个自动化运维工具，它是根据MySQL代码修改过来的，用它可以很明确的，详细的，准确的审核MySQL的SQL语句
 
 <!-- more -->
 
-[Inception](https://github.com/mysql-inception/inception)是集审核、执行、回滚于一体的一个自动化运维系统，它是根据MySQL代码修改过来的，用它可以很明确的，详细的，准确的审核MySQL的SQL语句，
+[Inception](https://github.com/mysql-inception/inception)是集审核、执行、回滚于一体的一个自动化运维工具，它是根据MySQL代码修改过来的，用它可以很明确的，详细的，准确的审核MySQL的SQL语句，
 它的工作模式和MySQL完全相同，可以直接使用MySQL客户端来连接，但不需要验证权限，它相对应用程序（上层审核流程系统等）而言，是一个服务器，
 在连接时需要指定服务器地址及Inception服务器的端口即可，而它相对要审核或执行的语句所对应的线上MySQL服务器来说，是一个客户端，
 它在内部需要实时的连接数据库服务器来获取所需要的信息，或者直接在在线上执行相应的语句及获取binlog等，Inception就是一个中间性质的服务。
