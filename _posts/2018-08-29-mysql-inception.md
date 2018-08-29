@@ -95,10 +95,11 @@ Yearning基于Django框架开发，后端需要使用mysql数据库
 创建数据库，下载并导入初始化语句
 
 ```sh
-mysql >CREATE DATABASE Yearning DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-
 $ wget https://raw.githubusercontent.com/cookieY/Yearning/master/install/yearning-docker-compose/init-sql/install.sql
+```
 
+```sql
+mysql >CREATE DATABASE Yearning DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 mysql >use Yearning; 
 mysql >source install.sql;
 ```
