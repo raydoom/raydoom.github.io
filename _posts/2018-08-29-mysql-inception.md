@@ -85,7 +85,7 @@ $ docker run -d --name inception -v /local_path/inc.cnf:/etc/inc.cnf -p 6669:666
 Inception使用mysql客户端进行连接
 
 ```sh
-$ mysql -uroot -h192.168.0.64 -P6669
+$ mysql -uroot -hINCEPTION_IP -P6669
 mysql >inception get variables;
 ```sh
 
@@ -99,7 +99,8 @@ mysql >CREATE DATABASE Yearning DEFAULT CHARACTER SET utf8 COLLATE utf8_general_
 
 $ wget https://raw.githubusercontent.com/cookieY/Yearning/master/install/yearning-docker-compose/init-sql/install.sql
 
-mysql >use Yearning ; source install.sql
+mysql >use Yearning; 
+mysql >source install.sql;
 ```
 
 #### 启动Yearning
@@ -107,7 +108,7 @@ mysql >use Yearning ; source install.sql
 使用容器方式部署Yearning，并连接到数据库
 
 ```sh
-$ docker run -d -e HOST=192.168.0.64 -e MYSQL_ADDR=192.168.0.64 -e MYSQL_USER=root -e MYSQL_PASSWORD=123123 -p8080:80 -p8000:8000 registry.cn-hangzhou.aliyuncs.com/cookie/yearning:v1.3.0
+$ docker run -d -e HOST=HOST_IP -e MYSQL_ADDR=MYSQL_IP -e MYSQL_USER=root -e MYSQL_PASSWORD=MYSQL_PASSWORD -p8080:80 -p8000:8000 registry.cn-hangzhou.aliyuncs.com/cookie/yearning:v1.3.0
 ```
 
 访问主机的8080端口，登入Yearning，默认用户名密码为 admin/Yearning_admin
