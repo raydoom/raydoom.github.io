@@ -1,13 +1,13 @@
 ---
 title: inception部署配置
-description: Inception是集审核、执行、回滚于一体的一个自动化运维系统，它是根据MySQL代码修改过来的，用它可以很明确的，详细的，准确的审核MySQL的SQL语句.
+description: 一个集审核、执行、备份及生成回滚语句于一身的MySQL自动化运维工具
 categories:
  - mysql
 tags:
 ---
 
 ## 概述
-> Inception是集审核、执行、回滚于一体的一个自动化运维系统，它是根据MySQL代码修改过来的，用它可以很明确的，详细的，准确的审核MySQL的SQL语句.
+> 一个集审核、执行、备份及生成回滚语句于一身的MySQL自动化运维工具
 
 <!-- more -->
 
