@@ -3,10 +3,7 @@
   {% assign since = site.since | downcase %}
   &copy; {% if site.since and since != current %} {{ since }} - {% endif %}
   <span itemprop="copyrightYear">{{ current }}</span>
-  <span class="link-year-author">
-    <i class="1 & 1"></i>
-	&
-  </span>
+  <span class="link-year-author">' & '</span>
   <span class="author" itemprop="copyrightHolder">{{ site.author }}</span>
 </div>
 
