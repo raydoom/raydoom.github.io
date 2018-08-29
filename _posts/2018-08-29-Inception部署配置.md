@@ -54,7 +54,7 @@ port=6669
 socket=/tmp/inc.socket
 character-set-client-handshake=0
 character-set-server=utf8
-inception_remote_system_password=123123
+inception_remote_system_password=111111
 inception_remote_system_user=root
 inception_remote_backup_port=3311
 inception_remote_backup_host=192.168.0.64
@@ -85,7 +85,7 @@ $ docker run -d --name inception -v /local_path/inc.cnf:/etc/inc.cnf -p 6669:666
 Inception使用mysql客户端进行连接
 
 ```sh
-$ mysql -uroot -hINCEPTION_IP -P6669
+$ mysql -uroot -h192.168.0.64 -P6669
 mysql >inception get variables;
 ```
 
@@ -109,7 +109,7 @@ mysql >source install.sql;
 使用容器方式部署Yearning，并连接到数据库
 
 ```sh
-$ docker run -d -e HOST=HOST_IP -e MYSQL_ADDR=MYSQL_IP -e MYSQL_USER=root -e MYSQL_PASSWORD=MYSQL_PASSWORD -p8080:80 -p8000:8000 registry.cn-hangzhou.aliyuncs.com/cookie/yearning:v1.3.0
+$ docker run -d -e HOST=192.168.0.64 -e MYSQL_ADDR=192.168.0.64 -e MYSQL_USER=root -e MYSQL_PASSWORD=111111 -p8080:80 -p8000:8000 registry.cn-hangzhou.aliyuncs.com/cookie/yearning:v1.3.0
 ```
 
 访问主机的8080端口，登入Yearning，默认用户名密码为 admin/Yearning_admin
