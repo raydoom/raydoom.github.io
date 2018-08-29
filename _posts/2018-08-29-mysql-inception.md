@@ -80,4 +80,36 @@ $ docker run -d --name inception -v /local_path/inc.cnf:/etc/inc.cnf -p 6669:666
 
 也可以不使用-v卷映射方式，在启动容器后，进入容器修改配置文件，重启容器生效
 
+#### 查看Inception状态
 
+Inception使用mysql客户端进行连接
+
+```sh
+$ mysql -uroot -h192.168.0.64 -P6669
+mysql >inception get variables;
+```sh
+
+#### 配置Yearning
+
+Yearning基于Django框架开发，后端需要使用mysql数据库
+创建数据库，下载并导入初始化语句
+
+```sh
+mysql >CREATE DATABASE Yearning DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+$ wget https://raw.githubusercontent.com/cookieY/Yearning/master/install/yearning-docker-compose/init-sql/install.sql
+
+mysql >use Yearning ; source install.sql
+```
+
+#### 启动Yearning
+
+使用容器方式部署Yearning，并连接到数据库
+
+```sh
+$ docker run -d -e HOST=192.168.0.64 -e MYSQL_ADDR=192.168.0.64 -e MYSQL_USER=root -e MYSQL_PASSWORD=123123 -p8080:80 -p8000:8000 registry.cn-hangzhou.aliyuncs.com/cookie/yearning:v1.3.0
+```
+
+访问主机的8080端口，登入Yearning，默认用户名密码为 admin/Yearning_admin
+
+进入管理->设置，配置Inception信息和备份库的地址信息，备份库的地址信息需要与Inception配置文件中的保持一致，经测试，此处不配置备份库的信息也能实现回滚功能，使用的备份库实例为Inception配置文件中所配置的信息。
