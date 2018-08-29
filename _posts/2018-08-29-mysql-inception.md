@@ -17,7 +17,7 @@ tags:
 它在内部需要实时的连接数据库服务器来获取所需要的信息，或者直接在在线上执行相应的语句及获取binlog等，Inception就是一个中间性质的服务。
 
 
-# Inception的架构如下 
+### Inception的架构如下 
 
 ![Inception的架构](https://raydoom.github.io/assets/images/post_images/mysql/Inception的架构.png)
 
