@@ -1,5 +1,5 @@
 ---
-title: inception部署配置
+title: Inception部署配置
 description: 一个是集审核、执行、回滚于一体的一个自动化运维工具，它是根据MySQL代码修改过来的，用它可以很明确的，详细的，准确的审核MySQL的SQL语句
 categories:
  - mysql
@@ -22,149 +22,51 @@ tags:
 ![Inception的架构](https://raydoom.github.io/assets/images/post_images/mysql/Inception的架构.png)
 
 
+Yearning SQL 审计平台 基于Vue.js与Django的整套mysql-sql审核平台解决方案。
+提供基于Inception的SQL检测及执行。
+Yearning 是基于Inception的web可视化SQL审核平台,其本身只提供可视化交互页面并不具备sql审核的能力。所以必须搭配Inception一起使用。
 
-## Installation
+## 部署步骤
 
-Check whether you have `Ruby 2.1.0` or higher installed:
+### 创建备份/回滚服务器
 
-```sh
-ruby --version
-```
+Inception在做DML操作时，具有备份功能，它会将所有当前语句修改的行备份下来，存储到一个指定的库中，创建一个mysql数据库实例作为Inception的备份/回滚服务器
 
-Install `Bundler`:
+## 目标数据库配置
 
-```sh
-gem install bundler
-```
-
-Clone Jacman theme:
-
-```sh
-git clone https://github.com/Simpleyyt/jekyll-theme-next.git
-cd jekyll-theme-next
-```
-
-Install Jekyll and other dependencies from the GitHub Pages gem:
-
-```sh
-bundle install
-```
-
-Run your Jekyll site locally:
-
-```sh
-bundle exec jekyll server
-```
-
-More Details：[Setting up your GitHub Pages site locally with Jekyll](https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/)
-
-
-## Features
-
-### Multiple languages support, including: English / Russian / French / German / Simplified Chinese / Traditional Chinese.
-
-Default language is English.
-
-```yml
-language: en
-# language: zh-Hans
-# language: fr-FR
-# language: zh-hk
-# language: zh-tw
-# language: ru
-# language: de
-```
-
-Set `language` field as following in site `_config.yml` to change to Chinese.
-
-```yml
-language: zh-Hans
-```
-
-### Comment support.
-
-NexT has native support for `DuoShuo` and `Disqus` comment systems.
-
-Add the following snippets to your `_config.yml`:
-
-```yml
-duoshuo:
-  enable: true
-  shortname: your-duoshuo-shortname
-```
-
-OR
-
-```yml
-disqus_shortname: your-disqus-shortname
-```
-
-### Social Media
-
-NexT can automatically add links to your Social Media accounts:
-
-```yml
-social:
-  GitHub: your-github-url
-  Twitter: your-twitter-url
-  Weibo: your-weibo-url
-  DouBan: your-douban-url
-  ZhiHu: your-zhihu-url
-```
-
-### Feed link.
-
-> Show a feed link.
-
-Set `rss` field in theme's `_config.yml`, as the following value:
-
-1. `rss: false` will totally disable feed link.
-2. `rss:  ` use sites' feed link. This is the default option.
-
-    Follow the installation instruction in the plugin's README. After the configuration is done for this plugin, the feed link is ready too.
-
-3. `rss: http://your-feed-url` set specific feed link.
-
-### Up to 5 code highlight themes built-in.
-
-NexT uses [Tomorrow Theme](https://github.com/chriskempson/tomorrow-theme) with 5 themes for you to choose from.
-Next use `normal` by default. Have a preview about `normal` and `night`:
-
-![Tomorrow Normal Preview](http://iissnan.com/nexus/next/tomorrow-normal.png)
-![Tomorrow Night Preview](http://iissnan.com/nexus/next/tomorrow-night.png)
-
-Head over to [Tomorrow Theme](https://github.com/chriskempson/tomorrow-theme) for more details.
-
-## Configuration
-
-NexT comes with few configurations.
-
-```yml
-
-# Menu configuration.
-menu:
-  home: /
-  archives: /archives
-
-# Favicon
-favicon: /favicon.ico
-
-# Avatar (put the image into next/source/images/)
-# can be any image format supported by web browsers (JPEG,PNG,GIF,SVG,..)
-avatar: /default_avatar.png
-
-# Code highlight theme
-# available: normal | night | night eighties | night blue | night bright
-highlight_theme: normal
-
-# Fancybox for image gallery
-fancybox: true
-
-# Specify the date when the site was setup
-since: 2013
+Inception所操作的目标数据库实例需开启bin¬log日志，并且格式为RAW，才能使用备份/回滚功能，连接信息将在Yearning的WEB管理界面添加，数据库配置文件配置项目
 
 ```
+log-bin = mysql-bin
+binlog-format=ROW
+binlog_row_image = full
+server_id = 12
+```
+## 配置Inception
 
-## Browser support
+inception的默认配置文件为/etc/inc.cnf
 
-![Browser support](http://iissnan.com/nexus/next/browser-support.png)
+```
+[inception]
+general_log=1
+general_log_file=inception.log
+port=6669
+socket=/tmp/inc.socket
+character-set-client-handshake=0
+character-set-server=utf8
+inception_remote_system_password=123123
+inception_remote_system_user=root
+inception_remote_backup_port=3311
+inception_remote_backup_host=192.168.0.64
+inception_support_charset=utf8,utf8mb4
+inception_osc_on=ON
+inception_osc_bin_dir=/usr/bin
+```
+
+**配置项说明**
+* inception_remote_backup_host      //远程备份库的host
+* inception_remote_backup_port      //远程备份库的port
+* inception_remote_system_user      //远程备份库的用户
+* inception_remote_system_password  //远程备份库的用户密码
+
+
