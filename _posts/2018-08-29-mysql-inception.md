@@ -65,10 +65,10 @@ inception_osc_bin_dir=/usr/bin
 
 **配置项说明**
 
-* inception_remote_backup_host      //远程备份库的host
-* inception_remote_backup_port      //远程备份库的port
-* inception_remote_system_user      //远程备份库的用户
-* inception_remote_system_password  //远程备份库的用户密码
+> * inception_remote_backup_host      //远程备份库的host
+> * inception_remote_backup_port      //远程备份库的port
+> * inception_remote_system_user      //远程备份库的用户
+> * inception_remote_system_password  //远程备份库的用户密码
 
 #### 启动Inception
 
