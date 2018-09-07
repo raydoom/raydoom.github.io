@@ -61,9 +61,11 @@ mount -t nfs 10.10.10.2:/data/nfs/ /mnt/nfs/
 #### 服务端故障后，导致客户端系统卡住
 当NFS服务端的故障，或者由于网络等原因，客户端无法连接到服务器端时，在客户端使用`df`命令，或者进入nfs目录，都会将当前终端卡住，并且服务器负载明显升高。此时无法通过`umount`卸载nfs目录解决问题，可以尝试修改`/etc/mtab`文件，删除nfs挂载相关的项目尝试解决
 #### 将moosefs目录作为nfs共享目录
-将moosefs目录作为nfs共享目录时，使用exportfs -r查看
-`会显示exportfs: /data/nfs requires fsid= for NFS export`
-需要在共享目录配置里加上 `fsid=0参数`
+将moosefs目录作为nfs共享目录时，使用`exportfs -r`查看，会显示
+```sh
+xportfs: /data/nfs requires fsid= for NFS export
+```
+需要在共享目录配置里加上 `fsid=0`参数
 ```sh
 /data/nfs 192.168.0.0/24(rw,no_root_squash,no_all_squash,async,fsid=0)
 ```
