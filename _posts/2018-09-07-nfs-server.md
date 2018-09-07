@@ -1,5 +1,5 @@
 ---
-title: NFS实现多服务器间的目录共享及文件同步
+title: NFS实现服务器间的目录共享
 description: NFS（Network File System）即网络文件系统。
 categories:
 - work
