@@ -1,6 +1,7 @@
 ---
 title: NFS实现服务器间的目录共享
 description: NFS（Network File System）即网络文件系统。多个客户端挂载同一服务端的目录资源，可实现目录资源的共享。
+
 categories:
 - work
 - nfs
