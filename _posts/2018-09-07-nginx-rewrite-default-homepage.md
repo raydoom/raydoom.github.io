@@ -16,7 +16,6 @@ tags:
 <!-- more -->
 
 修改nginx目录下html目录里面的index.html文件
-
 默认为
 ```
 <!DOCTYPE html>
