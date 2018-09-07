@@ -19,12 +19,12 @@ tags:
 #### 基础组件
 服务器端和客户端均安装组件
 ```sh
-yum -y install nfs-utils rpcbind
+$ yum -y install nfs-utils rpcbind
 ```
 #### 服务器端
 创建共享目录
 ```sh
-mkdir /data/nfs
+$ mkdir /data/nfs
 ```
 NFS配置文件
 ```sh
@@ -38,34 +38,34 @@ $ cat vim /etc/exports
 
 配置文件生效
 ```sh
-exportfs  -r
+$ exportfs  -r
 ```
 启动服务
 ```sh
-service rpcbind start
+$ service rpcbind start
 ```
 查看状态（需要在hosts中做好本机的主机名与IP地址）
 ```sh
-showmount -e 
+$ showmount -e 
 ```
 #### 客户端
 创建挂载目录
 ```sh
-mkdir -p /mnt/nfs
+$ mkdir -p /mnt/nfs
 ```
 使用mount命令挂载
 ```sh
-mount -t nfs 10.10.10.2:/data/nfs/ /mnt/nfs/
+$ mount -t nfs 10.10.10.2:/data/nfs/ /mnt/nfs/
 ```
 ## 使用问题记录
 #### 服务端故障后，导致客户端系统卡住
 当NFS服务端的故障，或者由于网络等原因，客户端无法连接到服务器端时，在客户端使用`df`命令，或者进入nfs目录，都会将当前终端卡住，并且服务器负载明显升高。此时无法通过`umount`卸载nfs目录解决问题，可以尝试修改`/etc/mtab`文件，删除nfs挂载相关的项目尝试解决
 #### 将moosefs目录作为nfs共享目录
 将moosefs目录作为nfs共享目录时，使用`exportfs -r`查看，会显示
-```sh
+```
 xportfs: /data/nfs requires fsid= for NFS export
 ```
 需要在共享目录配置里加上 `fsid=0`参数
-```sh
+```
 /data/nfs 192.168.0.0/24(rw,no_root_squash,no_all_squash,async,fsid=0)
 ```
