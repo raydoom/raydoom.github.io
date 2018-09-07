@@ -44,8 +44,8 @@ exportfs  -r
 ```sh
 service rpcbind start
 ```
-查看状态
+查看状态（需要在hosts中做好本机的主机名与IP地址）
 ```sh
 showmount -e 
 ```
-** 需要在hosts中做好本机的主机名与IP地址**
+
