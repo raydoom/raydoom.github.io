@@ -16,7 +16,8 @@ tags:
 <!-- more -->
 
 修改nginx目录下html目录里面的index.html文件
-默认为
+
+** 默认为 **
 ```
 <!DOCTYPE html>
 <html>
@@ -45,7 +46,7 @@ Commercial support is available at
 </html>
 ```
 
-修改为
+** 修改为 **
 
 ```
 <!DOCTYPE html>
@@ -70,3 +71,15 @@ window.location.href = "https://raydoom.github.io/";
 ```
 
 其中https://raydoom.github.io/为重定向的网址
+
+
+放假
+放假1
+放假2
+
+放假3
+
+放假4
+
+
+放假5
