@@ -21,7 +21,7 @@ tags:
 ```sh
 yum -y install nfs-utils rpcbind
 ```
-#### 服务端
+#### 服务器端
 创建共享目录
 ```sh
 mkdir /data/nfs
@@ -30,7 +30,7 @@ NFS配置文件
 ```sh
 $ cat vim /etc/exports
 /data/nfs/ 10.10.10.0/24(rw,no_root_squash,no_all_squash,sync)
-/data/nfs/ 10.10.10.0/24(rw,no_root_squash,no_all_squash,async)
+#/data/nfs/ 10.10.10.0/24(rw,no_root_squash,no_all_squash,async)
 ```
 参数说明
 * sync：数据同步写入磁盘
@@ -48,4 +48,12 @@ service rpcbind start
 ```sh
 showmount -e 
 ```
-
+#### 客户端
+创建挂载目录
+```sh
+mkdir -p /mnt/nfs
+```
+使用mount命令挂载
+```sh
+mount -t nfs 10.10.10.2:/data/nfs/ /mnt/nfs/
+```
