@@ -33,8 +33,8 @@ $ cat vim /etc/exports
 /data/nfs/ 10.10.10.0/24(rw,no_root_squash,no_all_squash,async)
 ```
 参数说明
->* sync：数据同步写入磁盘
->* async：数据可暂存于内存，可提高性能
+* sync：数据同步写入磁盘
+* async：数据可暂存于内存，可提高性能
 
 配置文件生效
 ```sh
