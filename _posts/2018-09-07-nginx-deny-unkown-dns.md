@@ -1,6 +1,7 @@
 ---
 title: nginx防止域名被恶意指向
 description: 设置nginx只监听指定的域名请求，防止服务器IP被恶意解析。
+
 categories:
 - work
 - nginx

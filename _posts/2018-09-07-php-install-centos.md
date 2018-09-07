@@ -1,6 +1,7 @@
 ---
 title: Centos安装php环境
 description: 使用yum方式在线安装php环境。
+
 categories:
 - work
 - php
