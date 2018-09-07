@@ -15,6 +15,8 @@ tags:
 
 <!-- more -->
 
+## 配置
+
 修改nginx目录下html目录里面的index.html文件
 
 **原文件**
