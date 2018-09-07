@@ -41,7 +41,7 @@ $ yum install php55w php55w-bcmath php55w-cli php55w-common php55w-devel php55w-
 
 如需安装其他版本，只需替换版本号，例如，需要安装5.6版，则将55改为56即可
 
-查看php版本
+#### 查看php版本
 
 ```sh
 $ php -v
