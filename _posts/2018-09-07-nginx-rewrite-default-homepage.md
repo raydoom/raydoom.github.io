@@ -70,4 +70,4 @@ window.location.href = "https://raydoom.github.io/";
 </html>
 ```
 
-其中https://raydoom.github.io/为重定向的网址
+其中`https://raydoom.github.io/`为重定向的网址
