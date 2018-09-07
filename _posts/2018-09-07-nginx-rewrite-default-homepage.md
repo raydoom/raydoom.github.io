@@ -1,12 +1,12 @@
 ---
-title: nginx设置将默认页面重定向
+title: 将nginx默认页面重定向
 description: 将nginx的默认欢迎页面重定向到特定的域名。
 categories:
 - work
-- nfs
+- nginx
 
 tags:
-- nfs
+- nginx
 ---
 
 ## 概述
