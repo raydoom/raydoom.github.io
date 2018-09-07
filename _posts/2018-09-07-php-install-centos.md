@@ -53,7 +53,7 @@ Zend Engine v2.5.0, Copyright (c) 1998-2014 Zend Technologies
 在apache目录/var/www/html/下面新建文件phpinfo.php
 
 ```sh
-$ cat phpinfo.php
+$ cat /var/www/html/phpinfo.php
 <?php      
 phpinfo();
 ?>
