@@ -67,6 +67,22 @@ $ service httpd start
 
 访问http://IP/phpinfo.php
 
+#### php55w安装mongodb扩展
+对于php55w及以下的版本，webtatic源并没有mongodb的扩展，需要通过pecl安装
+```sh
+$ pecl install mongodb
+```
+安装完成后，在php.ini配置扩展
+```sh
+$ echo extension=mongodb.so >> /etc/php.ini
+```
+重启apache
+```sh
+service httpd restart
+```
+访问phpinfo.php查看扩展详情
 
-
-
+对于php56w及以上的版本，可以直接使用yum安装
+```sh
+$ yum install php56w-pecl-mongodb
+```
