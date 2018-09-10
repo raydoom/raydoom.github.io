@@ -1,6 +1,7 @@
 ---
-title: Centos下安装php环境
+title: Centos安装php环境
 description: 使用yum方式在线安装php环境。
+
 categories:
 - work
 - php
@@ -17,16 +18,16 @@ tags:
 
 ## 安装
 
-#### 添加Webtatic yum源
+#### 添加webtatic yum源
 
-Webtatic EL7 for CentOS/RHEL 7
+webtatic EL7 for CentOS/RHEL 7
 
 ```sh
 $ rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 $ rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
 ```
 
-Webtatic EL6 for CentOS/RHEL 6
+webtatic EL6 for CentOS/RHEL 6
 
 ```sh
 $ rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
@@ -53,7 +54,7 @@ Zend Engine v2.5.0, Copyright (c) 1998-2014 Zend Technologies
 在apache目录/var/www/html/下面新建文件phpinfo.php
 
 ```sh
-$ cat phpinfo.php
+$ cat /var/www/html/phpinfo.php
 <?php      
 phpinfo();
 ?>
