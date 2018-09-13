@@ -47,9 +47,9 @@ validate-password=FORCE_PLUS_PERMANENT
 > * validate_password_number_count：密码至少要包含的数字个数。
 > * validate_password_special_char_count：密码至少要包含的特殊字符数。
 > * validate_password_policy：密码强度检查等级，0/LOW、1/MEDIUM、2/STRONG。
->  * 0/LOW：只检查长度。
->  * 1/MEDIUM：检查长度、数字、大小写、特殊字符。
->  * 2/STRONG：检查长度、数字、大小写、特殊字符字典文件。
+ * 0/LOW：只检查长度。
+ * 1/MEDIUM：检查长度、数字、大小写、特殊字符。
+ * 2/STRONG：检查长度、数字、大小写、特殊字符字典文件。
  
 #### 查看密码策略状态
 
