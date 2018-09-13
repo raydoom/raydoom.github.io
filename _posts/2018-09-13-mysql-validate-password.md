@@ -27,6 +27,8 @@ mysql >INSTALL PLUGIN validate_password SONAME 'validate_password.so';
 
 ## 配置插件
 
+#### 修改插件配置
+
 通过修改配置文件的[mysqld]项，来配置插件的使用参数
 
 ```sh
@@ -36,7 +38,7 @@ validate_password_policy=2
 validate-password=FORCE_PLUS_PERMANENT
 ```
 
-** 配置参数说明 **
+**配置参数说明**
 
 > * validate-password=ON/OFF/FORCE/FORCE_PLUS_PERMANENT: 决定是否使用该插件(及强制/永久强制使用)。
 > * validate_password_dictionary_file：插件用于验证密码强度的字典文件路径。
