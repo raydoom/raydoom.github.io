@@ -15,7 +15,7 @@ tags:
 
 <!-- more -->
 
-## 查看和设置mysql事务隔离级别
+## 查询和设置
 
 #### 查看当前设置
 
@@ -55,7 +55,7 @@ mysql> start transaction
 transaction-isolation = read-committed
 ```
 
-## mysql事务隔离级别说明
+## 事务隔离级别说明
 
 事务隔离级别
 
