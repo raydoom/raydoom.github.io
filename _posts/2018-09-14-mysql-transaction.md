@@ -73,15 +73,15 @@ my.cnf中加入一行
 transaction-isolation = READ-COMMITTED
 ```
 
-## mysql事务隔离级别解析
+## mysql事务隔离级别说明
 
-* read uncommitted
+* read-uncommitted
 > 可以看到未提交的数据（脏读）
 
-* read committed
+* read-committed
 > 读取提交的数据。但是，可能多次读取的数据结果不一致（不可重复读，幻读）
 
-* repeatable read(MySQL默认隔离级别)
+* repeatable-read (MySQL默认隔离级别)
 > 可以重复读取，但有幻读。读写观点：读取的数据行不可写，但是可以往表中新增数据。在MySQL中，其他事务新增的数据，看不到，不会产生幻读。采用多版本并发控制（MVCC）机制解决幻读问题
 
 * serializable
