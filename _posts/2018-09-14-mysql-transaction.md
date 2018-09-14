@@ -47,15 +47,17 @@ mysql> set global tx_isolation = 'read-committed';
 mysql> start transaction
 ```
 
-#### 配置文件写法在
+#### 配置文件写法
 
-my.cnf中加入一行
+在my.cnf中加入一行
 
 ```sh
 transaction-isolation = read-committed
 ```
 
 ## mysql事务隔离级别说明
+
+事务隔离级别
 
 * read-uncommitted
 > 可以看到未提交的数据（脏读）
