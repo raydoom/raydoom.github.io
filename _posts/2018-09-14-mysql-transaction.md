@@ -22,9 +22,9 @@ tags:
 查询全局和会话事务隔离级别
 
 ```sh
-SELECT @@tx_isolation;
-SELECT @@global.tx_isolation; 
-SELECT @@session.tx_isolation; 
+mysql> select @@tx_isolation;
+mysql> select @@global.tx_isolation; 
+mysql> select @@session.tx_isolation; 
 ```
 
 #### 设置隔离级别
@@ -38,14 +38,12 @@ mysql> set tx_isolation = 'read-committed';
 设置系统隔离级别
 
 ```sh
-mysql> set global tx_isolation = 'read-committed';;
+mysql> set global tx_isolation = 'read-committed';
 ```
 
 命令行操作，开始事务时
 
 ```sh
-mysql> set autocommit=off 
-#或
 mysql> start transaction
 ```
 
@@ -54,7 +52,7 @@ mysql> start transaction
 my.cnf中加入一行
 
 ```sh
-transaction-isolation = READ-COMMITTED
+transaction-isolation = read-committed
 ```
 
 ## mysql事务隔离级别说明
